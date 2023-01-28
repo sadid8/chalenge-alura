@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <title>Encriptador</title>
 </head>
 <body>
@@ -14,10 +18,19 @@
         <section>
             <textarea class= "text-area" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
             <div>
-                <h6 class="Informacion">Solo letras minúsculas y sin acentos</h6>
+                <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+            </div>
+            <div class="botones">
+                <button class="btn-encriptar">Encriptar</button>
+                <button class="btn-desencriptar">Desencriptar</button>
+                <button class="btn-Copiar">Copiar</button>
             </div>
         </section>
-        <section></section>
+        <section> 
+             <div>
+                <textarea name="texto_resultado" class="text-area1"cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+            </div>   
+        </section>
 
     </main>
 </body>
