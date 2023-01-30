@@ -28,10 +28,19 @@ main {
   .text-area:focus {
       outline: none;  
   }
+.informacion{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+
+}
 
 .botones{
     display: inline-block;
     text-align: center;
+    
 }
 
 .btn-encriptar{
@@ -49,21 +58,33 @@ main {
     border-radius: 24px;
     width: 328px;
     height: 67px; 
+    cursor: pointer;
 }
 
 .btn-Copiar{
-
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    width: 328px;
+    height: 67px; 
+    margin-left: 250px;
+    cursor: pointer;
 }
-.text-area1{
+.mensaje{
     position: absolute;
+    border-radius: 20px;
+    color: #0A3871;
     width: 400px;
-    height: 700px;
+    height: 600px;
     left: 1000px;
     top: 40px;
+    background: white;
     background-image: url(imagenes/Muñeco.png);
     background-size: 500px;
     background-position: 0%;
     background-repeat: no-repeat;
     text-transform: lowercase;
 }
-
+.mensaje:focus{
+    outline: none;
+}
