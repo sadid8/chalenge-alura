@@ -1,59 +1,54 @@
 const textarea = document.querySelector(".text-area");
 const textarea2 = document.querySelector(".mensaje");
 const encryptButton = document.querySelector(".btn-encriptar");
+const decryptButton = document.querySelector(".btn-desencriptar");
 encryptButton.addEventListener("click", () => {
   const text = textarea.value;
-  const encryptedText = encrypt(text);
-  textarea2.value = encryptedText;
+  const encriptarText = encriptado(text);
+  textarea2.value = encriptarText;
 });
-const encrypt = (text) => {
-  const encryptionKey = {
+decryptButton.addEventListener("click", () => {
+  const mensaje = textarea.value;
+  const desencriptar = desencriptado(mensaje);
+  textarea2.value = desencriptar;
+});
+// Un objeto que almacena las claves y sus valores de reemplazo
+const encriptado = (text) => {
+  const encriptarKey = {
     e: "enter",
     i: "imes",
     a: "ai",
     o: "ober",
     u: "ufat"
   };
-  let encryptedText = "";
+  let encriptarText = "";
   for (let i = 0; i < text.length; i++) {
-    const currentLetter = text[i];
-    if (encryptionKey[currentLetter]) {
-      encryptedText += encryptionKey[currentLetter];
+    const letractual = text[i];
+    if (encriptarKey[letractual]) {
+      encriptarText += encriptarKey[letractual];
     } else {
-      encryptedText += currentLetter;
+      encriptarText += letractual;
     }
   }
-  return encryptedText;
+  return encriptarText;
 };
 
+// Un objeto que almacena las claves y sus valores de reemplazo
+const reemplazar = {
+  enter: "e",
+  imes: "i",
+  ai: "a",
+  ober: "o",
+  ufat: "u"
+};
+
+// Función que toma una cadena de texto y reemplaza las claves con sus valores correspondientes
+function desencriptado(mensaje) {
+  let desencriptar = mensaje;
+  for (const key in reemplazar) {
+    desencriptar = desencriptar.split(key).join(reemplazar[key]);
+  }
+  return desencriptar;
+}
 
 
-// desencript  
-
-// const decrypt = (encryptedText) => {
-//   const decryptionKey = {
-//     "enter": "e",
-//     "imes": "i",
-//     "ai": "a",
-//     "ober": "o",
-//     "ufat": "u"
-//   };
-//   let decryptedText = "";
-//   let currentWord = "";
-//   for (let i = 0; i < encryptedText.length; i++) {
-//     const currentLetter = encryptedText[i];
-//     currentWord += currentLetter;
-//     if (decryptionKey[currentWord]) {
-//       decryptedText += decryptionKey[currentWord];
-//       currentWord = "";
-//     }
-//   }
-//   return decryptedText;
-// };
-
-// const decryptButton = document.querySelector("#decrypt-button");
-// decryptButton.addEventListener("click", () => {
-//   const encryptedText = textarea.value;
-//   const decryptedText = decrypt(encryptedText);
-//   textarea.value = decryptedText;
-// });
