@@ -2,6 +2,8 @@ const textarea = document.querySelector(".text-area");
 const textarea2 = document.querySelector(".mensaje");
 const encryptButton = document.querySelector(".btn-encriptar");
 const decryptButton = document.querySelector(".btn-desencriptar");
+const button = document.querySelector(".btn-Copiar");
+button.addEventListener("click", copyText);
 encryptButton.addEventListener("click", () => {
   const text = textarea.value;
   const encriptarText = encriptado(text);
@@ -51,4 +53,9 @@ function desencriptado(mensaje) {
   return desencriptar;
 }
 
-
+function copyText() {
+  const textArea = document.querySelector(".mensaje");
+  textArea.select();
+  document.execCommand("copy");
+  alert("Texto copiado");
+}
