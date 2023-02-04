@@ -75,7 +75,7 @@ main {
     border-radius: 20px;
     color: #0A3871;
     width: 400px;
-    height: 600px;
+    height: 500px;
     left: 1000px;
     top: 40px;
     background: white;
@@ -84,7 +84,19 @@ main {
     background-position: 0%;
     background-repeat: no-repeat;
     text-transform: lowercase;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    font-family: 'Inter';
 }
 .mensaje:focus{
     outline: none;
+}
+
+footer{
+    text-align: center;
+    padding:5px;
+   color: #0A3871;
 }

@@ -13,7 +13,22 @@ decryptButton.addEventListener("click", () => {
   const mensaje = textarea.value;
   const desencriptar = desencriptado(mensaje);
   textarea2.value = desencriptar;
+ });
+ //desaparecemos la imagen
+document.querySelector(".mensaje").addEventListener("focus", function() {  
+  this.style.backgroundImage = "none";
 });
+
+function validarTexto(){
+  let textoEscrito = document.querySelector(".text-area").value;
+  let validador = textoEscrito.match(/^[a-z]*$/);
+
+  if(!validador || validador === 0) {
+      alert("Solo son permitidas letras minúsculas y sin acentos")
+      location.reload();
+      return true;
+  }
+}
 // Un objeto que almacena las claves y sus valores de reemplazo
 const encriptado = (text) => {
   const encriptarKey = {
@@ -23,6 +38,8 @@ const encriptado = (text) => {
     o: "ober",
     u: "ufat"
   };
+  text = text.toLowerCase();
+  text = text.replace(/[^a-z\s]/g, "");
   let encriptarText = "";
   for (let i = 0; i < text.length; i++) {
     const letractual = text[i];
@@ -52,7 +69,7 @@ function desencriptado(mensaje) {
   }
   return desencriptar;
 }
-
+// Función Copiar
 function copyText() {
   const textArea = document.querySelector(".mensaje");
   textArea.select();
